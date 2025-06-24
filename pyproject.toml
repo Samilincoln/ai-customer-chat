@@ -5,6 +5,9 @@ description = "API for Zita customer service agent"
 authors = ["Your Name <your.email@example.com>"]
 readme = "README.md"
 
+[tool.poetry.package-mode]
+enabled = false
+
 [tool.poetry.dependencies]
 python = "^3.13"
 fastapi = "^0.115.12"
