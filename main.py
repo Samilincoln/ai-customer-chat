@@ -7,7 +7,7 @@ from langchain_groq import ChatGroq
 from langchain.memory import ConversationBufferMemory
 from config import BUSINESS_CATEGORIES
 from decouple import config
-from .utils.helpers import get_response, process_function_call, generate_business_description
+from .utils import get_response, process_function_call, generate_business_description
 import uuid
 
 # Initialize FastAPI app
