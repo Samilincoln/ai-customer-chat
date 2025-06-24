@@ -2,7 +2,7 @@ from typing import Dict, Any, Optional
 from langchain_core.tools import tool
 
 #from Zita.app import business_type
-from .product_tools import check_product_availability
+from product_tools import check_product_availability
 
 
 
