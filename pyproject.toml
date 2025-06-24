@@ -4,12 +4,11 @@ version = "1.0.0"
 description = "API for Zita customer service agent"
 authors = ["Your Name <your.email@example.com>"]
 readme = "README.md"
-
-[tool.poetry.package-mode]
-enabled = false
+# Remove or comment out this line:
+# packages = [{include = "zita"}]
 
 [tool.poetry.dependencies]
-python = "^3.13"
+python = "^3.11"
 fastapi = "^0.115.12"
 uvicorn = {extras = ["standard"], version = "^0.34.3"}
 langchain = "^0.3.25"
