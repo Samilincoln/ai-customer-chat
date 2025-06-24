@@ -5,7 +5,7 @@ from typing import Dict, List, Optional, Any
 import os
 from langchain_groq import ChatGroq
 from langchain.memory import ConversationBufferMemory
-from Zita.config import BUSINESS_CATEGORIES
+from config import BUSINESS_CATEGORIES
 from decouple import config
 from .utils.helpers import get_response, process_function_call, generate_business_description
 import uuid

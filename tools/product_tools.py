@@ -5,7 +5,7 @@ from data.mock_data import PRODUCT_DB
 @tool
 def enhance_product_search_with_llm(product_query: str, category: Optional[str] = None) -> Dict[str, Any]:
     """Use LLM to find the best matching product for a natural language query"""
-    from Zita.data.mock_data import PRODUCT_DB
+    from data.mock_data import PRODUCT_DB
     
     # Prepare the prompt for the LLM
     prompt = f"Given the product query: '{product_query}', find the best matching products from the following categories and items:\n\n"

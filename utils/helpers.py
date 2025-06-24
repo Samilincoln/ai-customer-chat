@@ -1,7 +1,7 @@
 import json
 import re
 from typing import Dict, Any, Optional, Tuple
-from Zita.models.schemas import LLMResponse, FunctionCallParameters
+from models.schemas import LLMResponse, FunctionCallParameters
 #from .models import LLMResponse, FunctionCallParameters
 
 
@@ -10,7 +10,7 @@ from Zita.models.schemas import LLMResponse, FunctionCallParameters
 
 def generate_zita_prompt(business_type: str) -> str:
     """Generate Zita's prompt for different business types"""
-    from Zita.data.mock_data import PRODUCT_DB
+    from data.mock_data import PRODUCT_DB
     
     sector_prompts = {
     # PRODUCTS - Physical Goods
@@ -317,11 +317,11 @@ def process_function_call(function_call: Dict[str, Any]) -> Optional[Dict[str, A
     if not function_call:
         return None
     
-    from Zita.tools.product_tools import check_product_availability, recommend_alternatives, apply_discount
-    from Zita.tools.order_tools import track_order
-    from Zita.tools.negotiation_tools import handle_negotiation
-    from Zita.tools.consultation_tools import consultation_service
-    from Zita.models.schemas import (
+    from tools.product_tools import check_product_availability, recommend_alternatives, apply_discount
+    from tools.order_tools import track_order
+    from tools.negotiation_tools import handle_negotiation
+    from tools.consultation_tools import consultation_service
+    from models.schemas import (
         CheckProductAvailabilityParams, TrackOrderParams, 
         ApplyDiscountParams, RecommendAlternativesParams,
         HandleNegotiationParams,ConsultationParams,
