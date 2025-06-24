@@ -2,11 +2,26 @@ services:
   - type: web
     name: zita-api
     env: python
-    buildCommand: pip install poetry && poetry config virtualenvs.create false && poetry install --no-dev
-    startCommand: poetry run uvicorn main:app --host 0.0.0.0 --port $PORT
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: GROQ_API_KEY
         sync: false  # Set this in Render dashboard
     healthCheckPath: /health
+
+
+
+# services:
+#   - type: web
+#     name: zita-api
+#     env: python
+#     buildCommand: pip install poetry && poetry config virtualenvs.create false && poetry install --no-dev
+#     startCommand: poetry run uvicorn main:app --host 0.0.0.0 --port $PORT
+#     envVars:
+#       - key: PYTHON_VERSION
+#         value: 3.11.0
+#       - key: GROQ_API_KEY
+#         sync: false  # Set this in Render dashboard
+#     healthCheckPath: /health
